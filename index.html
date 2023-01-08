@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kilogram</title>
+    <link rel="icon" type="image/URL-icon" href="images/instagram.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onload="includeHTML(); renderSuggestions(); init()">
+    <header
+      w3-include-html="templates/header.html"
+      class="flex-row shadow"
+    ></header>
+    <main class="flex-row margin-top-2">
+      <section class="content-left">
+        <div class="scroll-container">
+          <i
+            class="bi bi-arrow-left-circle-fill story-small left"
+            id="left"
+            onclick="scrollStoriesLeft()"
+          ></i>
+          <i
+            class="bi bi-arrow-right-circle-fill story-small right"
+            onclick="scrollStoriesRight()"
+          ></i>
+          <div
+            class="story-container margin-bottom-1"
+            id="story-container"
+          ></div>
+        </div>
+
+        <div class="post-container" id="post-container"></div>
+      </section>
+      <!-- section right -->
+      <section class="content-right margin-left-1">
+        <div class="flex-row vertical-align margin-left-1 margin-top-1">
+          <img src="images/me.png" class="img-big margin-right-1" />
+          <div class="flex-column">
+            <b><p class="margin-0 sidebar-heading">mo.georgy</p></b>
+            <p class="margin-0 gray sidebar-p">Moritz Georgy</p>
+          </div>
+        </div>
+        <b
+          ><p class="margin-left-1 gray sidebar-heading">
+            Vorschläge für dich
+          </p></b
+        >
+      </section>
+    </main>
+    <!-- story overlay  -->
+    <div class="overlay d-none">
+      <div class="x" onclick="hideOverlay()">X</div>
+      <div class="open-story-container flex-row-standard">
+        <i
+          class="bi bi-arrow-left-circle-fill story-big margin-right-1 mobile"
+          onclick="previousStory()"
+        ></i>
+        <div class="img-container">
+          <img id="open-story-image" />
+          <div class="flex-row-standard story-info-container">
+            <img class="story-profile" />
+            <p class="story-username margin-left-1"></p>
+          </div>
+        </div>
+        <i
+          class="bi bi-arrow-right-circle-fill story-big margin-left-1 mobile"
+          onclick="nextStory()"
+        ></i>
+      </div>
+    </div>
+    <script src="includeTemplates.js"></script>
+    <script src="JSON.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
